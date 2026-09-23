@@ -59,8 +59,17 @@ const login  = async(req,res)=>{
          if(!password) return sendError(res , "password is required" ,400)
          if(!validatePassword(password)) return sendError(res , " enter a valid password" ,400)
 
-          
-            sendSuccess(res , "login successfully" , 200)
+            const existingUser = await userSchema.findOne({email})
+
+            if(!existingUser) return  sendError(res , "user not found" ,404)
+
+
+                const isMatch = await bcrypt.compare( password, existingUser.password);
+
+           if(!isMatch)  return sendError(res , "password not match" ,400) 
+
+
+         
 
         
     } catch (error) {
