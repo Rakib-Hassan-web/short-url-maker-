@@ -50,7 +50,13 @@ const login  =(req,res)=>{
    
     try {
         const {email ,password} =req.body
-        
+
+
+         if(!email) return sendError(res , "email is required" ,400)
+         if(!validateEmail(email)) return sendError(res , "enter a valid email address" ,400)
+         if(!password) return sendError(res , "password is required" ,400)
+         if(!validatePassword(password)) return sendError(res , " enter a valid password" ,400)
+
         
     } catch (error) {
         console.log(error);
