@@ -1,6 +1,8 @@
 const userSchema = require("../models/userSchema")
 const { sendError, sendSuccess } = require("../services/responseHandler")
 const { validateEmail, validatePassword } = require("../utils/validation")
+const bcrypt = require('bcrypt');
+
 
 // -------------reg----------------
 const registration  = async(req,res)=>{
@@ -46,7 +48,7 @@ const registration  = async(req,res)=>{
 // -------------login----------------
 
 
-const login  =(req,res)=>{
+const login  = async(req,res)=>{
    
     try {
         const {email ,password} =req.body
@@ -56,6 +58,9 @@ const login  =(req,res)=>{
          if(!validateEmail(email)) return sendError(res , "enter a valid email address" ,400)
          if(!password) return sendError(res , "password is required" ,400)
          if(!validatePassword(password)) return sendError(res , " enter a valid password" ,400)
+
+          
+            sendSuccess(res , "login successfully" , 200)
 
         
     } catch (error) {
