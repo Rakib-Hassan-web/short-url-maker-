@@ -69,7 +69,7 @@ const login  = async(req,res)=>{
            if(!isMatch)  return sendError(res , "password not match" ,400) 
 
 
-         
+            sendSuccess(res , "login successfully" , 200)
 
         
     } catch (error) {
