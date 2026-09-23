@@ -1,11 +1,12 @@
 const express = require('express');
 const DB_Config = require('./dbConfig');
+const routee = require('./routes');
 const app = express()
 app.use(express.json())
 
 DB_Config()
 
-
+app.use(routee)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
