@@ -47,7 +47,15 @@ const registration  = async(req,res)=>{
 
 
 const login  =(req,res)=>{
-    res.send("this is login ")
+   
+    try {
+        const {email ,password} =req.body
+        
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
 
 }
 
