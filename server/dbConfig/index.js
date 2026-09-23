@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 const DB_Config =()=>{
-    mongoose.connect('mongodb+srv://short_url_maker:short_url_maker@cluster0.7ooynjm.mongodb.net/short_url_maker?appName=Cluster0')
+    mongoose.connect(process.env.DB_URL)
   .then(() => console.log('DB Connected!'));
 }
 
