@@ -33,7 +33,7 @@ const registration  = async(req,res)=>{
    } catch (error) {
 
     sendError(res , "Server Error" ,500)
-    console.log(error);
+
     
    }
 
