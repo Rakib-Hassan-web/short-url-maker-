@@ -10,9 +10,6 @@ const registration  =(req,res)=>{
 // -------------login----------------
 
 
-const login  =(req,res)=>{
-    res.send("this is login ")
 
-}
 
 module.exports={registration ,login}
