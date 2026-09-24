@@ -13,7 +13,10 @@ const shortUrlcreate = async(req,res)=>{
 
         const shortUrl =generateRandomString()
 
-      
+        const urlData = new shortnerSchema({
+            longUrl,
+            shortUrl
+        })
 
 
         await urlData.save()
