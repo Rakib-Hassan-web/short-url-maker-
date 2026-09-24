@@ -37,7 +37,6 @@ const redirectToUrl = async (req,res)=>{
     const urlData = await shortnerSchema.findOne({shortUrl : params.id})
 
 
-    // sendSuccess.redirect(res,  urlData ,200)
 
     res.redirect(urlData.longUrl)
     
