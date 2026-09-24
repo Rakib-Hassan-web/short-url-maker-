@@ -23,7 +23,11 @@ const shortUrlcreate = async(req,res)=>{
 
 
         
-        sendSuccess(res , urlData)
+        sendSuccess(res , { longUrl,shortUrl,},201)
+
+}
+
+const redirectToUrl = async (req,res)=>{
 
 }
 
