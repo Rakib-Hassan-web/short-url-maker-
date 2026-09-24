@@ -14,7 +14,19 @@ const shortnerSchema = new mongoose.Schema({
     user:{
         type:mongoose.Schema.ObjectId,
         ref:"User"
-    }
+    },
+    visitHistory : [
+        {
+
+          visitTime:{
+            type:Date,
+            default:Date.now()
+          }
+
+
+        }
+
+    ]
 },{timestamps:true})
 
 module.exports =mongoose.model("shortner" ,shortnerSchema)

@@ -5,7 +5,7 @@ const shortner_route = require("./shortner")
 
 
 routee.use("/auth" ,auth_route)
-routee.use("/shortner" ,shortner_route)
+routee.use("/url" ,shortner_route)
 
 
 module.exports=routee

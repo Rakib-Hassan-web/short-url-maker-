@@ -1,8 +1,9 @@
 const express = require('express');
+const { shortUrlcreate } = require('../controllers/shortnerController');
 const routee =express.Router()
 
 
-routee
+routee.post("/create" ,shortUrlcreate)
 
 
 module.exports=routee

@@ -14,7 +14,15 @@ const validatePassword = (password) => {
 };
 
 
+const validateURL = (url) => {
+  const urlRegex =
+    /^(https?:\/\/)([\w-]+\.)+[\w-]{2,}(\/[\w\-._~:/?#[\]@!$&'()*+,;=%]*)?$/;
+
+  return urlRegex.test(url);
+};
+
 module.exports = {
     validateEmail,
-    validatePassword
+    validatePassword,
+    validateURL
 };
