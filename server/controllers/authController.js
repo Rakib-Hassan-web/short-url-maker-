@@ -69,8 +69,8 @@ const login  = async(req,res)=>{
 
            if(!isMatch)  return sendError(res , "password not match" ,400) 
 
-            jwt.sign({ foo: 'bar' }, privateKey, { algorithm: 'RS256' }, function(err, token) {
-  console.log(token);
+            jwt.sign({  }, {
+ 
 });
 
 
