@@ -2,6 +2,7 @@ const userSchema = require("../models/userSchema")
 const { sendError, sendSuccess } = require("../services/responseHandler")
 const { validateEmail, validatePassword } = require("../utils/validation")
 const bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
 
 
 // -------------reg----------------
