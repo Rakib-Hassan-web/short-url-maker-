@@ -38,7 +38,7 @@ const redirectToUrl = async (req,res)=>{
 
 
 
-    
+    res.redirect(urlData.longUrl)
     
 }
 
