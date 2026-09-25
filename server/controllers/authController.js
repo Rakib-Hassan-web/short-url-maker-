@@ -69,9 +69,7 @@ const login  = async(req,res)=>{
 
            if(!isMatch)  return sendError(res , "password not match" ,400) 
 
-            jwt.sign({  }, {
- 
-});
+            jwt.sign({  }, process.env.JWT_SEC);
 
 
             sendSuccess(res , "login successfully" , 200)
