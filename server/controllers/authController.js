@@ -74,11 +74,11 @@ const login  = async(req,res)=>{
      
 
 
-            sendSuccess(res , "login successfully" , 200 ,"token" )
+            sendSuccess(res , "login successfully" , {acc_token : token},200 , )
 
         
     } catch (error) {
-        
+
         console.log(error);
         
     }
