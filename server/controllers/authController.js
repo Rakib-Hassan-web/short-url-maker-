@@ -71,14 +71,14 @@ const login  = async(req,res)=>{
 
        const token=     jwt.sign({ id :existingUser._id , email:existingUser.email}, process.env.JWT_SEC);
 
-       console.log(token);
-       
+     
 
 
-            sendSuccess(res , "login successfully" , 200)
+            sendSuccess(res , "login successfully" , 200 ,"token" )
 
         
     } catch (error) {
+        
         console.log(error);
         
     }
