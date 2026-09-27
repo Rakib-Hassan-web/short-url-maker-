@@ -71,6 +71,8 @@ const login  = async(req,res)=>{
 
        const token=     jwt.sign({ id :existingUser._id , email:existingUser.email}, process.env.JWT_SEC);
 
+       res.cookie( "acc_token",token)
+
      
 
 
