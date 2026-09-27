@@ -1,8 +1,8 @@
 const userSchema = require("../models/userSchema")
-const { sendError, sendSuccess } = require("../services/responseHandler")
+const { sendError, sendSuccess } = require("../services/responseHandler");
+const generateAccTkn = require("../utils/token");
 const { validateEmail, validatePassword } = require("../utils/validation")
 const bcrypt = require('bcrypt');
-var jwt = require('jsonwebtoken');
 
 
 // -------------reg----------------
@@ -69,7 +69,8 @@ const login  = async(req,res)=>{
 
            if(!isMatch)  return sendError(res , "password not match" ,400) 
 
-       const token=     jwt.sign({ id :existingUser._id , email:existingUser.email}, process.env.JWT_SEC);
+
+     const token=  generateAccTkn({ id :existingUser._id , email:existingUser.email})
 
        res.cookie( "acc_token",token)
 
