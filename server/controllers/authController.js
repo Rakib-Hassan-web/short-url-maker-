@@ -69,7 +69,10 @@ const login  = async(req,res)=>{
 
            if(!isMatch)  return sendError(res , "password not match" ,400) 
 
-            jwt.sign({  }, process.env.JWT_SEC);
+       const token=     jwt.sign({ id :existingUser._id , email:existingUser.email}, process.env.JWT_SEC);
+
+       console.log(token);
+       
 
 
             sendSuccess(res , "login successfully" , 200)
