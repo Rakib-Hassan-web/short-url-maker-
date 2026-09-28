@@ -1,8 +1,10 @@
 const express = require('express');
 const DB_Config = require('./dbConfig');
 const routee = require('./routes');
+var cookieParser = require('cookie-parser')
 const app = express()
 app.use(express.json())
+app.use(cookieParser())
 
 
 DB_Config()

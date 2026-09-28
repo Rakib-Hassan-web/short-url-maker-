@@ -7,7 +7,7 @@ const { validateURL } = require("../utils/validation")
 const shortUrlcreate = async(req,res)=>{
    
     const {longUrl} =req.body
-    const token =req.cookies;
+    const token =req.cookies.acc_token;
     console.log("token=>" , token);
     
 
