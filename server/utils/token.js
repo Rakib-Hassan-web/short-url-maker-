@@ -11,6 +11,7 @@ const generateAccTkn =(payload)=>{
 
 const verifyToken=(token)=>{
        const decoded = jwt.verify(token, process.env.JWT_SEC);
+       return decoded
 
 }
 
