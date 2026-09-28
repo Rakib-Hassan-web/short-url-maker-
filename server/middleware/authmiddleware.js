@@ -1,6 +1,6 @@
 // ------in this section use only middleware
 
-const { verifyToken } = require("../utils/token");
+const { verifyToken, generateAccTkn } = require("../utils/token");
 
 
 const authMiddleware =(req,res,next)=>{
@@ -14,6 +14,7 @@ const authMiddleware =(req,res,next)=>{
         
 
         next()
+        const decoded =generateAccTkn(token)
     
       
     } catch (error) {
